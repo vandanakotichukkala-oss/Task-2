@@ -1,0 +1,18 @@
+ Use INSERT INTO for adding rows
+
+insert into e_commerce.students values(1, 'Vandana', 6,'A','Srinivasarao',9493078611)
+insert into e_commerce.students values(2, 'Naresh', 10,'B','Ramesh',8245698197)
+insert into e_commerce.students values(3, 'Ajay',10,'A','Srinivasarao',9493078611)
+insert into e_commerce.students values(4, 'Vijay', 9,'A','Ramesh', 8245681927)
+
+   Handle missing values using NULL or default
+
+insert into e_commerce.students values(5,'Lakshmi',8,'B','Null',9866478592)
+insert into e_commerce.students (roll.no,student_name, class,father_name,parent_no) values (6,'Veda',6,'Srinivas',8885260064)
+
+
+Use UPDATE and DELETE with WHERE conditions
+
+update e_commerce.students set father_name = 'Veeranna' where roll_no = 5
+
+delete from e_commerce.students where roll_no = 6
