@@ -16,3 +16,41 @@ Use UPDATE and DELETE with WHERE conditions
 update e_commerce.students set father_name = 'Veeranna' where roll_no = 5
 
 delete from e_commerce.students where roll_no = 6
+
+
+Difference between NULL and 0 :- NULL signifies "unknown" or "missing," while 0 signifies "nothing" or "zero quantity."
+
+a default constraint :- The DEFAULT constraint is used to set a default value for a column. The default value will be added to all new records, if no other value is specified
+
+How does IS NULL work :- IS NULL is a specific operator in SQL designed to identify NULL values. A NULL value signifies missing, unknown, or absent data in a field. 
+                          When you use WHERE column_name IS NULL, the database returns only those rows where column_name contains a NULL value
+
+ update multiple rows :- When rows need to be updated with different values, a CASE statement can be used within the UPDATE statement. 
+                          Example:To update the section for different roll_no values: 
+                          Code  UPDATE e_commerce.students
+                               SET section = CASE
+                               WHEN roll_no = 1 THEN 'C'
+                               WHEN roll_no  = 2 THEN 'A'
+                               WHEN roll_no  = 3 THEN 'B'
+                               END
+                              WHERE roll_no  IN (1, 2, 3);
+
+Can we insert partial values :- Yes, it is possible to insert partial values into a table in SQL. This is commonly referred to as inserting a "partial row" or a "partial-width insertion."
+                                 When performing a partial insert, you specify only the columns for which you are providing values, and the database handles the remaining columns according to their definitions
+
+
+What happens if a NOT NULL field is left empty :- If a NOT NULL field is left truly empty (meaning, an attempt is made to insert or update a record with a NULL value in that column), a database error will occur. 
+                                                  The specific error message will vary depending on the database system (e.g., MySQL, PostgreSQL, SQL Server, Oracle), 
+                                                  but the general outcome is that the operation (insert or update) will fail.
+
+How do you rollback a deletion :- To rollback a deletion, use the ROLLBACK command in a database transaction or the platform's built-in recovery tools to restore deleted data.
+
+
+
+
+
+
+
+
+
+
